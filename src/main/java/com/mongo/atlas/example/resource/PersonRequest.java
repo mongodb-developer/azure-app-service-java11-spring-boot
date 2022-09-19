@@ -1,4 +1,4 @@
-package com.MongoDBAzureAppServiceDemo.AtlasAzureAppServiceDemo.resource;
+package com.mongo.atlas.example.resource;
 
 public class PersonRequest {
 
