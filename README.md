@@ -1,5 +1,5 @@
 # Quick Start Java Spring Boot & MongoDB Atlas Project which can be deployed on Azure App Service
-This is a demo springboot application created using Spring Initialzr 
+This is a demo springboot application created using IntelliJ Spring Initialzr And Azure Plugin 
 to show how to connect to Atlas using a Java Spring Boot Application and deploy it as a Microsoft Azure Wep App(AppService)
 
 ## Supported versions:
