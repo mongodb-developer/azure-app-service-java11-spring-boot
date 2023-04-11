@@ -14,7 +14,12 @@ to show how to connect to Atlas using a Java Spring Boot Application and deploy 
 
 - Get started with a Free Tier Cluster on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 - Read this blog post: [Quick Start - Getting your Free MongoDB Atlas Cluster](https://developer.mongodb.com/quickstart/free-atlas-cluster).
-- You will need to add mongodb.properties file and add the default MongoDB URI `spring.data.mongodb.uri`, database `spring.data.mongodb.database` and the collection `spring.data.mongodb.collection` in the file.
+- You might need to add mongodb.properties file if you don't want to use application properties directly, (the benefit lies that the optional properties file could be added to gitignore and used only for dev purposes and secrets never flow to Git) and add the default MongoDB URI `spring.data.mongodb.uri`, database `spring.data.mongodb.database` (if required).
+
+Please note:
+- Spring data automatically detects the database either from the connection string (spring.data.mongodb.uri) 
+- if spring.data.mongodb.database is specified, this value is taken as the database and it overrides the database specified in the above key (URL), and
+- the collection is taken by spring.data.mongodb.collection or @Document annotation, if this property is not specified 
 
 ## How To Run
 
