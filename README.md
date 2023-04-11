@@ -24,7 +24,7 @@ Replace the Atlas URI in application.properties and run as a spring boot applica
 
 - Start the server in a console with `mvn spring-boot:run`.
 - If you add some Unit Tests, you would start them with `mvn clean test`.
-- You can build the project with : `mvn clean package`.
+- You can build the project with `mvn clean package`.
 
 ## Disclaimer
 Use at your own risk; not a supported MongoDB product

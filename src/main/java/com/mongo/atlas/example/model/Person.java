@@ -23,16 +23,17 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
     public String getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public void setLastName(String lastName) {
@@ -46,6 +47,4 @@ public class Person {
     public void setId(ObjectId id) {
         this.id = id;
     }
-
-
 }
