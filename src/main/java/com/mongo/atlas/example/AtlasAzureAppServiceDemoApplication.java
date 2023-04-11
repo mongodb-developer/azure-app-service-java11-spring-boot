@@ -17,22 +17,20 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 @SpringBootApplication
 public class AtlasAzureAppServiceDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AtlasAzureAppServiceDemoApplication.class, args);
-	}
+    @Value("${spring.data.mongodb.uri}")
+    private String connectionString;
 
-	@Value("${spring.data.mongodb.uri}")
-	private String connectionString;
+    public static void main(String[] args) {
+        SpringApplication.run(AtlasAzureAppServiceDemoApplication.class, args);
+    }
 
-	@Bean
-	public MongoClient mongoClient() {
-
-		CodecRegistry pojoCodecRegistry = fromProviders(PojoCodecProvider.builder().automatic(true).build());
-		CodecRegistry codecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), pojoCodecRegistry);
-		return MongoClients.create(MongoClientSettings.builder()
-				.applyConnectionString(new ConnectionString(connectionString))
-				.codecRegistry(codecRegistry)
-				.build());
-	}
-
+    @Bean
+    public MongoClient mongoClient() {
+        CodecRegistry pojoCodecRegistry = fromProviders(PojoCodecProvider.builder().automatic(true).build());
+        CodecRegistry codecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), pojoCodecRegistry);
+        return MongoClients.create(MongoClientSettings.builder()
+                                                      .applyConnectionString(new ConnectionString(connectionString))
+                                                      .codecRegistry(codecRegistry)
+                                                      .build());
+    }
 }
